@@ -3,6 +3,8 @@ import pandas as pd
 
 from analyze import Analyse
 
+st.title('Life Expectancy Analysis')
+st.image('2.jpg')
 
 
 def viewDataset(path):
@@ -25,7 +27,8 @@ def viewDataset(path):
         st.dataframe(dataframe.describe())
         st.markdown('---')
 
-        types = {'object' : 'Categorical', 'int64': 'Numerical', 'float64': 'Numerical'}
+        types = {'object': 'Categorical',
+                 'int64': 'Numerical', 'float64': 'Numerical'}
         types = list(map(lambda t: types[str(t)], dataframe.dtypes))
         st.header('Dataset Columns')
         for col, t in zip(dataframe.columns, types):
@@ -36,6 +39,7 @@ def viewDataset(path):
             cols[2].markdown('#### Type :')
             cols[3].markdown(f"## {t}")
 
+
 sidebar = st.sidebar
 sidebar.header('Choose Your Option')
 options = ('View Dataset', 'Analysis of Malaria','Analysis of Tuberculosis','Analyze By Hepatitus','About')
@@ -43,19 +47,17 @@ choice = sidebar.selectbox(options= options, label= "Choose Action")
 
 if choice == 'View Dataset':
     with st.spinner("Loading Data..."):
-        st.title('Life Expectancy Analysis')
-        st.image('2.jpg')
         st.header('Raw datasets')
         st.header('Hepatitus Dataset')
-        viewDataset(path = 'datasets/hepatitusBsurfaceAntigen.csv')
+        viewDataset(path='datasets/hepatitusBsurfaceAntigen.csv')
         st.header('Malaria Dataset')
-        viewDataset(path ='datasets/incedenceOfMalaria.csv')
+        viewDataset(path='datasets/incedenceOfMalaria.csv')
         st.header('Tuberculosis Dataset')
-        viewDataset(path ='datasets/incedenceOfTuberculosis.csv')
+        viewDataset(path='datasets/incedenceOfTuberculosis.csv')
         st.header('NTDs Dataset')
-        viewDataset(path ='datasets/interventionAgianstNTDs.csv')
+        viewDataset(path='datasets/interventionAgianstNTDs.csv')
         st.header('HIV Dataset')
-        viewDataset(path ='datasets/newHivInfections.csv')
+        viewDataset(path='datasets/newHivInfections.csv')
 elif choice == 'Analysis of Malaria':
     with st.spinner("Loading Analysis..."):
         st.subheader('Number of malaria cases per 1000 population at risk per year.')
@@ -76,7 +78,8 @@ elif choice == 'Analysis of Tuberculosis':
     with st.spinner("Loading Analysis..."):
         st.subheader('Number of Tuberculosis cases per 100,000 population at risk per year')
         st.image('images/tb1.png')
-        st.subheader('Top and bottom 20 countries with lowest Tuberculosis incidence')
+        st.subheader(
+            'Top and bottom 20 countries with lowest Tuberculosis incidence')
         st.image('images/tb2.png')
         st.subheader('Where different countries stand in 2019')
         st.image('images/tb3.png')
