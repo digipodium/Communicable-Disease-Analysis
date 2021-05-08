@@ -38,7 +38,7 @@ def viewDataset(path):
 
 sidebar = st.sidebar
 sidebar.header('Choose Your Option')
-options = ('View Dataset', 'Analysis of Malaria','Analysis of Tuberculosis','Analyze By Hepatitus')
+options = ('View Dataset', 'Analysis of Malaria','Analysis of Tuberculosis','Analyze By Hepatitus','About')
 choice = sidebar.selectbox(options= options, label= "Choose Action")
 
 if choice == 'View Dataset':
@@ -58,41 +58,41 @@ if choice == 'View Dataset':
         viewDataset(path ='datasets/newHivInfections.csv')
 elif choice == 'Analysis of Malaria':
     with st.spinner("Loading Analysis..."):
-        st.subheader('Malaria incidence per(1,000 population at risk)')
+        st.subheader('Number of malaria cases per 1000 population at risk per year.')
         st.image('images/malaria1.png')
         st.subheader('Top 20 countries with highest Malaria Incidence')
         st.image('images/malaria2.png')
-        st.subheader('Malaria incidence per(1,000 population at risk)')
+        st.subheader('Number of malaria cases per 1000 population at risk per year.')
         st.image('images/malaria3.png')
         st.subheader('Best progress over year')
         st.image('images/malaria4.png')
-        st.subheader('Malaria incidence per(1,000 population at risk)')
+        st.subheader('Number of malaria cases per 1000 population at risk per year.')
         st.image('images/malaria5.png')
         st.subheader('Progress of different countries')
         st.image('images/malaria6.png')
-        st.subheader('Malaria incidence per(1,000 population at risk)')
+        st.subheader('Number of malaria cases per 1000 population at risk per year.')
         st.image('images/malaria7.png')
 elif choice == 'Analysis of Tuberculosis':
     with st.spinner("Loading Analysis..."):
-        st.subheader('Tuberculosis incidence(per 100,000 population at risk)')
+        st.subheader('Number of Tuberculosis cases per 100,000 population at risk per year')
         st.image('images/tb1.png')
         st.subheader('Top and bottom 20 countries with lowest Tuberculosis incidence')
         st.image('images/tb2.png')
         st.subheader('Where different countries stand in 2019')
         st.image('images/tb3.png')
-        st.subheader('TuberCulosis incidence (per 100,000 population at risk)')
+        st.subheader('Number of Tuberculosis cases per 100,000 population at risk per year')
         st.image('images/tb4.png')
-        st.subheader('TuberCulosis incidence (per 100,000 population at risk)')
+        st.subheader('Number of Tuberculosis cases per 100,000 population at risk per year')
         st.image('images/tb5.png')
         st.subheader('Countries having peak')
         st.image('images/tb6.png')
-        st.subheader('Tuberculosis incidence (per 100,000 population at risk)')
+        st.subheader('Number of Tuberculosis cases per 100,000 population at risk per year')
         st.image('images/tb7.png')
         st.subheader('Progress of Different Countries')
         st.image('images/tb8.png')
         st.subheader('Where different countries stand in progress')
         st.image('images/tb9.png')
-        st.subheader('TuberCulosis incidence (per 100,000 population at risk)')
+        st.subheader('Number of Tuberculosis cases per 100,000 population at risk per year')
         st.image('images/tb10.png')
 elif choice == 'Analyze By Hepatitus':
     with st.spinner("Loading Analysis..."):
@@ -100,3 +100,20 @@ elif choice == 'Analyze By Hepatitus':
         st.image('images/h1.png')
         st.subheader('Where Different countries stand in progress')
         st.image('images/h2.png')
+elif choice == 'About':
+    with st.spinner("Loading Analysis..."):
+        st.write('''A communicable disease is one that is spread from one person to another through a variety of ways that include: contact with blood and bodily fluids; breathing in an airborne virus; or by being bitten by an insect.
+
+Reporting of cases of communicable disease is important in the planning and evaluation of disease prevention and control programs, in the assurance of appropriate medical therapy, and in the detection of common-source outbreaks. California law mandates healthcare providers and laboratories to report over 80 diseases or conditions to their local health department. Some examples of the reportable communicable diseases include Hepatitis A, B & C, influenza, measles, and salmonella and other food borne illnesses.
+        ''')
+
+        st.write('''<b>How do these communicable diseases spread?<b>
+
+How these diseases spread depends on the specific disease or infectious agent. Some ways in which communicable diseases spread are by:
+
+physical contact with an infected person, such as through touch (staphylococcus), sexual intercourse (gonorrhea, HIV), fecal/oral transmission (hepatitis A), or droplets (influenza, TB)
+contact with a contaminated surface or object (Norwalk virus), food (salmonella, E. coli), blood (HIV, hepatitis B), or water (cholera);
+bites from insects or animals capable of transmitting the disease (mosquito: malaria and yellow fever; flea: plague); and
+travel through the air, such as tuberculosis or measles.
+
+        ''', unsafe_allow_html = True)
