@@ -39,56 +39,67 @@ def viewDataset(path):
 
 sidebar = st.sidebar
 sidebar.header('Choose Your Option')
-options = ['View Dataset', 'Analyze By Country',
-           'Analyze by life Expectancy', 'Analyze By Gender', 'Analyze By Year']
+options = ('View Dataset', 'Analysis of Malaria',
+           'Analysis of Tuberculosis', 'Analyze By Hepatitus')
 choice = sidebar.selectbox(options=options, label="Choose Action")
 
-if choice == options[0]:
+if choice == 'View Dataset':
     with st.spinner("Loading Data..."):
         st.title('Life Expectancy Analysis')
         st.image('2.jpg')
         st.header('Raw datasets')
-        st.subheader('Hepatitus Dataset')
+        st.header('Hepatitus Dataset')
         viewDataset(path='datasets/hepatitusBsurfaceAntigen.csv')
-        st.subheader('Malaria Dataset')
+        st.header('Malaria Dataset')
         viewDataset(path='datasets/incedenceOfMalaria.csv')
-        st.subheader('Tuberculosis Dataset')
+        st.header('Tuberculosis Dataset')
         viewDataset(path='datasets/incedenceOfTuberculosis.csv')
-        st.subheader('NTDs Dataset')
+        st.header('NTDs Dataset')
         viewDataset(path='datasets/interventionAgianstNTDs.csv')
-        st.subheader('HIV Dataset')
+        st.header('HIV Dataset')
         viewDataset(path='datasets/newHivInfections.csv')
-elif choice == options[1]:
+elif choice == 'Analysis of Malaria':
     with st.spinner("Loading Analysis..."):
-        st.subheader('Top and bottom 20 life expectancy')
-        # st.image('images/analysisByCountry.png')
-        st.subheader('Countries vs life expectancy')
-        # st.image('images/analysisByCountry1.png')
-        st.image('images/analysisByRegion.png')
-        st.image('images/analysisByRegion1.png')
-        st.image('images/analysisByRegion2.png')
-        st.image('images/analysisByRegion3.png')
-elif choice == options[2]:
+        st.subheader('Malaria incidence per(1,000 population at risk)')
+        st.image('images/malaria1.png')
+        st.subheader('Top 20 countries with highest Malaria Incidence')
+        st.image('images/malaria2.png')
+        st.subheader('Malaria incidence per(1,000 population at risk)')
+        st.image('images/malaria3.png')
+        st.subheader('Best progress over year')
+        st.image('images/malaria4.png')
+        st.subheader('Malaria incidence per(1,000 population at risk)')
+        st.image('images/malaria5.png')
+        st.subheader('Progress of different countries')
+        st.image('images/malaria6.png')
+        st.subheader('Malaria incidence per(1,000 population at risk)')
+        st.image('images/malaria7.png')
+elif choice == 'Analysis of Tuberculosis':
     with st.spinner("Loading Analysis..."):
-        st.image('images/analysisByExpectancy.png')
-        st.image('images/analysisByExpectancy1.png')
-elif choice == options[3]:
-    with st.spinner("Loading Analysis..."):
+        st.subheader('Tuberculosis incidence(per 100,000 population at risk)')
+        st.image('images/tb1.png')
         st.subheader(
-            'Top difference between life expectancy of male and female')
-        st.image('images/analysisByGender.png')
-        st.subheader(
-            'Progress in male and female life expectancy of male and female')
-        st.image('images/analysisByGender1.png')
-        st.subheader('Total percentage of male and female and both sexes')
-        st.image('images/pieGender.png')
-        st.image('images/analysisByGender2.png')
-elif choice == options[4]:
+            'Top and bottom 20 countries with lowest Tuberculosis incidence')
+        st.image('images/tb2.png')
+        st.subheader('Where different countries stand in 2019')
+        st.image('images/tb3.png')
+        st.subheader('TuberCulosis incidence (per 100,000 population at risk)')
+        st.image('images/tb4.png')
+        st.subheader('TuberCulosis incidence (per 100,000 population at risk)')
+        st.image('images/tb5.png')
+        st.subheader('Countries having peak')
+        st.image('images/tb6.png')
+        st.subheader('Tuberculosis incidence (per 100,000 population at risk)')
+        st.image('images/tb7.png')
+        st.subheader('Progress of Different Countries')
+        st.image('images/tb8.png')
+        st.subheader('Where different countries stand in progress')
+        st.image('images/tb9.png')
+        st.subheader('TuberCulosis incidence (per 100,000 population at risk)')
+        st.image('images/tb10.png')
+elif choice == 'Analyze By Hepatitus':
     with st.spinner("Loading Analysis..."):
-        st.subheader('Top difference between life expectancy of both sexes')
-        st.image('images/analysisByYear.png')
-        st.subheader('Progress in life expectancy from 2010 to 2019')
-        st.image('images/analysisByYear1.png')
-        st.subheader(
-            'Progress in life expectancy of male and feamle over years')
-        st.image('images/analysisByYear2.png')
+        st.subheader('Top and bottom 20 countries')
+        st.image('images/h1.png')
+        st.subheader('Where Different countries stand in progress')
+        st.image('images/h2.png')
