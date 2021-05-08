@@ -3,6 +3,9 @@ import pandas as pd
 
 from analyze import Analyse
 
+st.title('Life Expectancy Analysis')
+st.image('2.jpg')
+
 
 def viewDataset(path):
     st.write('Dataset Used in Project')
@@ -45,8 +48,6 @@ choice = sidebar.selectbox(options=options, label="Choose Action")
 
 if choice == 'View Dataset':
     with st.spinner("Loading Data..."):
-        st.title('Life Expectancy Analysis')
-        st.image('2.jpg')
         st.header('Raw datasets')
         st.header('Hepatitus Dataset')
         viewDataset(path='datasets/hepatitusBsurfaceAntigen.csv')
