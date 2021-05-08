@@ -3,7 +3,7 @@ import pandas as pd
 
 from analyze import Analyse
 
-st.title('Life Expectancy Analysis')
+st.title('Communicable disease Analysis')
 st.image('2.jpg')
 
 
@@ -66,7 +66,7 @@ elif choice == 'Analysis of Malaria':
         st.image('images/malaria2.png')
         st.subheader('Number of malaria cases per 1000 population at risk per year.')
         st.image('images/malaria3.png')
-        st.subheader('Best progress over year')
+        st.subheader('Best progress in malaria incidence over year')
         st.image('images/malaria4.png')
         st.subheader('Number of malaria cases per 1000 population at risk per year.')
         st.image('images/malaria5.png')
@@ -81,7 +81,7 @@ elif choice == 'Analysis of Tuberculosis':
         st.subheader(
             'Top and bottom 20 countries with lowest Tuberculosis incidence')
         st.image('images/tb2.png')
-        st.subheader('Where different countries stand in 2019')
+        st.subheader('Where different countries stand in 2019(Tuberculosis Incidence)')
         st.image('images/tb3.png')
         st.subheader('Number of Tuberculosis cases per 100,000 population at risk per year')
         st.image('images/tb4.png')
@@ -91,7 +91,7 @@ elif choice == 'Analysis of Tuberculosis':
         st.image('images/tb6.png')
         st.subheader('Number of Tuberculosis cases per 100,000 population at risk per year')
         st.image('images/tb7.png')
-        st.subheader('Progress of Different Countries')
+        st.subheader('Progress of Different Countries in Tuberculosis incedence')
         st.image('images/tb8.png')
         st.subheader('Where different countries stand in progress')
         st.image('images/tb9.png')
@@ -99,7 +99,7 @@ elif choice == 'Analysis of Tuberculosis':
         st.image('images/tb10.png')
 elif choice == 'Analyze By Hepatitus':
     with st.spinner("Loading Analysis..."):
-        st.subheader('Top and bottom 20 countries')
+        st.subheader('Top and bottom 20 countries in Hepatitus Incidence')
         st.image('images/h1.png')
         st.subheader('Where Different countries stand in progress')
         st.image('images/h2.png')
@@ -120,3 +120,5 @@ bites from insects or animals capable of transmitting the disease (mosquito: mal
 travel through the air, such as tuberculosis or measles.
 
         ''', unsafe_allow_html = True)
+
+        st.write('Here, in this project we can draw insights like which country has made how much progress in years, we can see status of Malaria, Tuberculosis and hepatitus in countries. we can view the dataset used in the project(Raw Data). This project is basically analysis of some communicable disease like Malaria, Tuberculosis and Hepatitus')
