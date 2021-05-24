@@ -61,47 +61,74 @@ if choice == 'View Dataset':
 elif choice == 'Analysis of Malaria':
     with st.spinner("Loading Analysis..."):
         st.subheader('Number of malaria cases per 1000 population at risk per year.')
+        st.write('Cases of Malaria in thousand population in these countries, India, Nepal, Bhutan, Malaysia')
         st.image('images/malaria1.png')
         st.subheader('Top 20 countries with highest Malaria Incidence')
+        st.write('Randawa having the highest Malaria Cases')
         st.image('images/malaria2.png')
         st.subheader('Number of malaria cases per 1000 population at risk per year.')
+        st.write('Cases of Malaria from 2000 to 2018 per thousand population at theses countries')
         st.image('images/malaria3.png')
         st.subheader('Best progress in malaria incidence over year')
+        st.write('Positive progess in countries over a period of 18 years ie.. 2000 to 2018, per thousand population at theses countries')
         st.image('images/malaria4.png')
+        st.write('''Countries with highest Progess :- Timor-Leste
+Lets look at these countries progress
+        ''')
         st.subheader('Number of malaria cases per 1000 population at risk per year.')
+        st.write('Comparision of top 5 progressing countries over a period of 2000 to 2018 in Malaria Incidence')
         st.image('images/malaria5.png')
         st.subheader('Progress of different countries')
+        st.write('Progess in countries over a period of 18 years ie.. 2000 to 2018, per thousand population at theses countries')
         st.image('images/malaria6.png')
         st.subheader('Number of malaria cases per 1000 population at risk per year.')
+        st.write('Comparison of 2 best and 2 worst preforming countries over a period of 18 years ie... 2000 to 2018')
         st.image('images/malaria7.png')
 elif choice == 'Analysis of Tuberculosis':
     with st.spinner("Loading Analysis..."):
         st.subheader('Number of Tuberculosis cases per 100,000 population at risk per year')
+        st.write('Cases of tuberculosis over a period of 2000 to 2018 in India, China, Germany and USA.')
         st.image('images/tb1.png')
-        st.subheader(
-            'Top and bottom 20 countries with lowest Tuberculosis incidence')
+        st.subheader('Top and bottom 20 countries with lowest Tuberculosis incidence')
+        st.write('bottom and top 20 countries with lowest and highest Tuberculosis incidence in 2019 respectively')
         st.image('images/tb2.png')
         st.subheader('Where different countries stand in 2019(Tuberculosis Incidence)')
+        st.write('Tuberculosis incidence and where these countries stand in 2019')
         st.image('images/tb3.png')
+        st.header('Lets Look at the progress of TOP 5 and BOTTOM 5 countries')
         st.subheader('Number of Tuberculosis cases per 100,000 population at risk per year')
+        st.write('Cases of tuberculosis over a period of 2000 to 2018 in 100,000 population')
+        st.write('Plot For TOP 5 Countries')
         st.image('images/tb4.png')
         st.subheader('Number of Tuberculosis cases per 100,000 population at risk per year')
+        st.write('Cases of tuberculosis over a period of 2000 to 2018 in 100,000 population')
+        st.write('Plot For BOTTOM 5 Countries')
         st.image('images/tb5.png')
+
         st.subheader('Countries having peak')
         st.image('images/tb6.png')
+        st.write('''We can see that most of countries achieve their peak in 2000
+But some countries are at their peak at 2019 also, lets have a look at those countries progress
+        ''')
         st.subheader('Number of Tuberculosis cases per 100,000 population at risk per year')
+        st.write('Countries at peak in 2019, their population at risk per 100,000 population at risk per year')
         st.image('images/tb7.png')
         st.subheader('Progress of Different Countries in Tuberculosis incedence')
+        st.write('Lets Look at the progress')
         st.image('images/tb8.png')
         st.subheader('Where different countries stand in progress')
+        st.write('Tuberculosis incidence progress and where these countries stand in 2019')
         st.image('images/tb9.png')
         st.subheader('Number of Tuberculosis cases per 100,000 population at risk per year')
+        st.write('Comparsion of Tuberculosis cases per 100,000 population at risk per year in Botswana, Eswatini, Nauru and Marshall Islands')
         st.image('images/tb10.png')
 elif choice == 'Analyze By Hepatitus':
     with st.spinner("Loading Analysis..."):
         st.subheader('Top and bottom 20 countries in Hepatitus Incidence')
+        st.write('bottom and top 20 countries with lowest and highest Hepatitus incidence among children under 5 years in 2019 respectively')
         st.image('images/h1.png')
         st.subheader('Where Different countries stand in progress')
+        st.write('Hepatitus incidence among children under 5 years and where these countries stand in 2019')
         st.image('images/h2.png')
 elif choice == 'About':
     with st.spinner("Loading Analysis..."):
