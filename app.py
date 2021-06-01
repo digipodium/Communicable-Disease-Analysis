@@ -7,6 +7,10 @@ st.title('Communicable disease Analysis')
 st.image('2.jpg')
 
 
+def overview():
+    st.header('Project Overview')
+
+
 def viewDataset(path):
     st.write('Dataset Used in Project')
     analysis = Analyse(path)
@@ -42,8 +46,9 @@ def viewDataset(path):
 
 sidebar = st.sidebar
 sidebar.header('Choose Your Option')
-options = ('View Dataset', 'Analysis of Malaria','Analysis of Tuberculosis','Analyze By Hepatitus','About')
-choice = sidebar.selectbox(options= options, label= "Choose Action")
+options = ('View Dataset', 'Analysis of Malaria',
+           'Analysis of Tuberculosis', 'Analyze By Hepatitus', 'About')
+choice = sidebar.selectbox(options=options, label="Choose Action")
 
 if choice == 'View Dataset':
     with st.spinner("Loading Data..."):
@@ -60,42 +65,53 @@ if choice == 'View Dataset':
         viewDataset(path='datasets/newHivInfections.csv')
 elif choice == 'Analysis of Malaria':
     with st.spinner("Loading Analysis..."):
-        st.subheader('Number of malaria cases per 1000 population at risk per year.')
+        st.subheader(
+            'Number of malaria cases per 1000 population at risk per year.')
         st.image('images/malaria1.png')
         st.subheader('Top 20 countries with highest Malaria Incidence')
         st.image('images/malaria2.png')
-        st.subheader('Number of malaria cases per 1000 population at risk per year.')
+        st.subheader(
+            'Number of malaria cases per 1000 population at risk per year.')
         st.image('images/malaria3.png')
         st.subheader('Best progress in malaria incidence over year')
         st.image('images/malaria4.png')
-        st.subheader('Number of malaria cases per 1000 population at risk per year.')
+        st.subheader(
+            'Number of malaria cases per 1000 population at risk per year.')
         st.image('images/malaria5.png')
         st.subheader('Progress of different countries')
         st.image('images/malaria6.png')
-        st.subheader('Number of malaria cases per 1000 population at risk per year.')
+        st.subheader(
+            'Number of malaria cases per 1000 population at risk per year.')
         st.image('images/malaria7.png')
 elif choice == 'Analysis of Tuberculosis':
     with st.spinner("Loading Analysis..."):
-        st.subheader('Number of Tuberculosis cases per 100,000 population at risk per year')
+        st.subheader(
+            'Number of Tuberculosis cases per 100,000 population at risk per year')
         st.image('images/tb1.png')
         st.subheader(
             'Top and bottom 20 countries with lowest Tuberculosis incidence')
         st.image('images/tb2.png')
-        st.subheader('Where different countries stand in 2019(Tuberculosis Incidence)')
+        st.subheader(
+            'Where different countries stand in 2019(Tuberculosis Incidence)')
         st.image('images/tb3.png')
-        st.subheader('Number of Tuberculosis cases per 100,000 population at risk per year')
+        st.subheader(
+            'Number of Tuberculosis cases per 100,000 population at risk per year')
         st.image('images/tb4.png')
-        st.subheader('Number of Tuberculosis cases per 100,000 population at risk per year')
+        st.subheader(
+            'Number of Tuberculosis cases per 100,000 population at risk per year')
         st.image('images/tb5.png')
         st.subheader('Countries having peak')
         st.image('images/tb6.png')
-        st.subheader('Number of Tuberculosis cases per 100,000 population at risk per year')
+        st.subheader(
+            'Number of Tuberculosis cases per 100,000 population at risk per year')
         st.image('images/tb7.png')
-        st.subheader('Progress of Different Countries in Tuberculosis incedence')
+        st.subheader(
+            'Progress of Different Countries in Tuberculosis incedence')
         st.image('images/tb8.png')
         st.subheader('Where different countries stand in progress')
         st.image('images/tb9.png')
-        st.subheader('Number of Tuberculosis cases per 100,000 population at risk per year')
+        st.subheader(
+            'Number of Tuberculosis cases per 100,000 population at risk per year')
         st.image('images/tb10.png')
 elif choice == 'Analyze By Hepatitus':
     with st.spinner("Loading Analysis..."):
@@ -119,6 +135,8 @@ contact with a contaminated surface or object (Norwalk virus), food (salmonella,
 bites from insects or animals capable of transmitting the disease (mosquito: malaria and yellow fever; flea: plague); and
 travel through the air, such as tuberculosis or measles.
 
-        ''', unsafe_allow_html = True)
+        ''', unsafe_allow_html=True)
 
         st.write('Here, in this project we can draw insights like which country has made how much progress in years, we can see status of Malaria, Tuberculosis and hepatitus in countries. we can view the dataset used in the project(Raw Data). This project is basically analysis of some communicable disease like Malaria, Tuberculosis and Hepatitus')
+
+        st.markdown('# This is Heading')
