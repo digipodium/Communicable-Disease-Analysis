@@ -9,6 +9,21 @@ st.image('2.jpg')
 
 def overview():
     st.header('Project Overview')
+    with st.spinner("Loading Analysis..."):
+        st.write('''A communicable disease is one that is spread from one person to another through a variety of ways that include: contact with blood and bodily fluids; breathing in an airborne virus; or by being bitten by an insect. 
+        Reporting of cases of communicable disease is important in the planning and evaluation of disease prevention and control programs, in the assurance of appropriate medical therapy, and in the detection of common-source outbreaks. California law mandates healthcare providers and laboratories to report over 80 diseases or conditions to their local health department. Some examples of the reportable communicable diseases include Hepatitis A, B & C, influenza, measles, and salmonella and other food borne illnesses.
+        ''')
+
+        st.write('''<b>How do these communicable diseases spread?<b> 
+        How these diseases spread depends on the specific disease or infectious agent. Some ways in which communicable diseases spread are by:
+        physical contact with an infected person, such as through touch (staphylococcus), sexual intercourse (gonorrhea, HIV), fecal/oral transmission (hepatitis A), or droplets (influenza, TB) 
+        contact with a contaminated surface or object (Norwalk virus), food (salmonella, E. coli), blood (HIV, hepatitis B), or water (cholera); 
+        bites from insects or animals capable of transmitting the disease (mosquito: malaria and yellow fever; flea: plague); and 
+        travel through the air, such as tuberculosis or measles.
+
+        ''', unsafe_allow_html=True)
+
+        st.write('Here, in this project we can draw insights like which country has made how much progress in years, we can see status of Malaria, Tuberculosis and hepatitus in countries. we can view the dataset used in the project(Raw Data). This project is basically analysis of some communicable disease like Malaria, Tuberculosis and Hepatitus')
 
 
 def viewDataset(path):
@@ -44,26 +59,7 @@ def viewDataset(path):
             cols[3].markdown(f"## {t}")
 
 
-sidebar = st.sidebar
-sidebar.header('Choose Your Option')
-options = ('View Dataset', 'Analysis of Malaria',
-           'Analysis of Tuberculosis', 'Analyze By Hepatitus', 'About')
-choice = sidebar.selectbox(options=options, label="Choose Action")
-
-if choice == 'View Dataset':
-    with st.spinner("Loading Data..."):
-        st.header('Raw datasets')
-        st.header('Hepatitus Dataset')
-        viewDataset(path='datasets/hepatitusBsurfaceAntigen.csv')
-        st.header('Malaria Dataset')
-        viewDataset(path='datasets/incedenceOfMalaria.csv')
-        st.header('Tuberculosis Dataset')
-        viewDataset(path='datasets/incedenceOfTuberculosis.csv')
-        st.header('NTDs Dataset')
-        viewDataset(path='datasets/interventionAgianstNTDs.csv')
-        st.header('HIV Dataset')
-        viewDataset(path='datasets/newHivInfections.csv')
-elif choice == 'Analysis of Malaria':
+def analyseMalaria():
     with st.spinner("Loading Analysis..."):
         st.subheader(
             'Number of malaria cases per 1000 population at risk per year.')
@@ -81,8 +77,7 @@ elif choice == 'Analysis of Malaria':
         st.subheader('Best progress in malaria incidence over year')
         st.write('Positive progess in countries over a period of 18 years ie.. 2000 to 2018, per thousand population at theses countries')
         st.image('images/malaria4.png')
-        st.write('''Countries with highest Progess :- Timor-Leste
-Lets look at these countries progress
+        st.write('''Countries with highest Progess :- Timor-Leste Lets look at these countries progress
         ''')
         st.subheader(
             'Number of malaria cases per 1000 population at risk per year.')
@@ -97,7 +92,9 @@ Lets look at these countries progress
         st.write(
             'Comparison of 2 best and 2 worst preforming countries over a period of 18 years ie... 2000 to 2018')
         st.image('images/malaria7.png')
-elif choice == 'Analysis of Tuberculosis':
+
+
+def analyseTuberculosis():
     with st.spinner("Loading Analysis..."):
         st.subheader(
             'Number of Tuberculosis cases per 100,000 population at risk per year')
@@ -129,8 +126,7 @@ elif choice == 'Analysis of Tuberculosis':
 
         st.subheader('Countries having peak')
         st.image('images/tb6.png')
-        st.write('''We can see that most of countries achieve their peak in 2000
-But some countries are at their peak at 2019 also, lets have a look at those countries progress
+        st.write('''We can see that most of countries achieve their peak in 2000 But some countries are at their peak at 2019 also, lets have a look at those countries progress
         ''')
         st.subheader(
             'Number of Tuberculosis cases per 100,000 population at risk per year')
@@ -149,7 +145,9 @@ But some countries are at their peak at 2019 also, lets have a look at those cou
             'Number of Tuberculosis cases per 100,000 population at risk per year')
         st.write('Comparsion of Tuberculosis cases per 100,000 population at risk per year in Botswana, Eswatini, Nauru and Marshall Islands')
         st.image('images/tb10.png')
-elif choice == 'Analyze By Hepatitus':
+
+
+def analyseHepatitis():
     with st.spinner("Loading Analysis..."):
         st.subheader('Top and bottom 20 countries in Hepatitus Incidence')
         st.write('bottom and top 20 countries with lowest and highest Hepatitus incidence among children under 5 years in 2019 respectively')
@@ -158,24 +156,34 @@ elif choice == 'Analyze By Hepatitus':
         st.write(
             'Hepatitus incidence among children under 5 years and where these countries stand in 2019')
         st.image('images/h2.png')
-elif choice == 'About':
-    with st.spinner("Loading Analysis..."):
-        st.write('''A communicable disease is one that is spread from one person to another through a variety of ways that include: contact with blood and bodily fluids; breathing in an airborne virus; or by being bitten by an insect.
 
-Reporting of cases of communicable disease is important in the planning and evaluation of disease prevention and control programs, in the assurance of appropriate medical therapy, and in the detection of common-source outbreaks. California law mandates healthcare providers and laboratories to report over 80 diseases or conditions to their local health department. Some examples of the reportable communicable diseases include Hepatitis A, B & C, influenza, measles, and salmonella and other food borne illnesses.
-        ''')
 
-        st.write('''<b>How do these communicable diseases spread?<b>
+sidebar = st.sidebar
+sidebar.header('Choose Your Option')
+choices = ('Overview', 'View Dataset', 'Analysis of Malaria',
+           'Analysis of Tuberculosis', 'Analyze By Hepatitus')
 
-How these diseases spread depends on the specific disease or infectious agent. Some ways in which communicable diseases spread are by:
+selChoice = sidebar.selectbox(options=choices, label="Choose Action")
 
-physical contact with an infected person, such as through touch (staphylococcus), sexual intercourse (gonorrhea, HIV), fecal/oral transmission (hepatitis A), or droplets (influenza, TB)
-contact with a contaminated surface or object (Norwalk virus), food (salmonella, E. coli), blood (HIV, hepatitis B), or water (cholera);
-bites from insects or animals capable of transmitting the disease (mosquito: malaria and yellow fever; flea: plague); and
-travel through the air, such as tuberculosis or measles.
+if selChoice == choices[0]:
+    overview()
+elif selChoice == choices[1]:
+    with st.spinner("Loading Data..."):
+        st.header('Raw datasets')
+        st.header('Hepatitus Dataset')
+        viewDataset(path='datasets/hepatitusBsurfaceAntigen.csv')
+        st.header('Malaria Dataset')
+        viewDataset(path='datasets/incedenceOfMalaria.csv')
+        st.header('Tuberculosis Dataset')
+        viewDataset(path='datasets/incedenceOfTuberculosis.csv')
+        st.header('NTDs Dataset')
+        viewDataset(path='datasets/interventionAgianstNTDs.csv')
+        st.header('HIV Dataset')
+        viewDataset(path='datasets/newHivInfections.csv')
 
-        ''', unsafe_allow_html=True)
-
-        st.write('Here, in this project we can draw insights like which country has made how much progress in years, we can see status of Malaria, Tuberculosis and hepatitus in countries. we can view the dataset used in the project(Raw Data). This project is basically analysis of some communicable disease like Malaria, Tuberculosis and Hepatitus')
-
-        st.markdown('# This is Heading')
+elif selChoice == choices[2]:
+    analyseMalaria()
+elif selChoice == choices[3]:
+    analyseTuberculosis()
+elif selChoice == choices[4]:
+    analyseHepatitis()
